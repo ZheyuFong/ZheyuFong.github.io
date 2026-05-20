@@ -1,65 +1,200 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>方哲宇 - 化学（理论计算/电催化方向）</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>方哲宇 | 化学（理论计算/电催化方向）</title>
   <style>
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --accent:#2563eb;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
+      margin: 0;
       font-family: "Microsoft YaHei", Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
     }
-    h1, h2, h3 {
-      color: #2c3e50;
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
     }
-    hr {
-      border: 0;
-      height: 1px;
-      background: #ccc;
-      margin: 20px 0;
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
     }
-    img {
+
+    .hero-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: #111827;
+    }
+
+    .subtitle {
+      margin: 0 0 10px 0;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .meta {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .photo {
+      flex: 0 0 170px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .photo img {
+      width: 160px;
+      height: 210px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+      background: #fff;
+    }
+
+    section {
+      margin-top: 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 14px 0;
+      font-size: 1.35rem;
+      color: #111827;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    h3 {
+      margin: 18px 0 8px 0;
+      font-size: 1.05rem;
+      color: #111827;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    img.work-img {
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 10px 0;
+      margin: 12px 0 18px 0;
+      border-radius: 14px;
+      border: 1px solid var(--line);
     }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 18px 0;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .photo {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .photo img {
+        width: 130px;
+        height: 172px;
+      }
+
+      .container {
+        padding: 14px;
+      }
+
+      section, .hero {
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-left">
+        <h1>方哲宇 | 化学（理论计算 / 电催化方向）</h1>
+        <p class="subtitle"><strong>河南大学 · 化学本科 | 2024.09-至今</strong></p>
+        <ul class="meta">
+          <li>邮箱：Zyfongchem@henu.edu.cn</li>
+          <li>广东汕头人，现居河南开封</li>
+        </ul>
+      </div>
 
-<h1>方哲宇 | 化学（理论计算/电催化方向）</h1>
-<p><strong>河南大学 · 化学本科 | 2024.09-至今</strong></p>
-<ul>
-  <li>邮箱：Zyfongchem@henu.edu.cn</li>
-  <li>广东汕头人 现居河南开封</li>
-</ul>
+      <div class="photo">
+        <img src="https://free.picui.cn/free/2026/05/20/6a0dccbd4d913.png" alt="方哲宇证件照">
+      </div>
+    </header>
 
-<hr>
+    <section>
+      <h2>一、教育背景</h2>
+      <h3>主修课程</h3>
+      <p>无机化学、有机化学、物理化学、分析化学、仪器分析及配套实验</p>
 
-<h2>一、教育背景</h2>
+      <h3>旁听课程</h3>
+      <p>统计力学、微分几何、生物化学、非线性物理学、数学模型</p>
 
-<h3>主修课程</h3>
-<p>无机化学、有机化学、物理化学、分析化学、仪器分析及配套实验</p>
+      <h3>自修课程</h3>
+      <p>数学分析、高等代数、常微分方程、机器学习、生物物理学、生物信息学</p>
 
-<h3>旁听课程</h3>
-<p>统计力学、微分几何、生物化学、非线性物理学、数学模型</p>
-
-<h3>自修课程</h3>
-<p>数学分析、高等代数、常微分方程、机器学习、生物物理学、生物信息学</p>
-
-<h3>学业排名</h3>
-<ul>
-  <li>第一学年综合成绩：<strong>3/188</strong></li>
-  <li>专业分流后第一学期：<strong>1/68</strong></li>
-</ul>
+      <h3>学业排名</h3>
+      <ul>
+        <li>第一学年综合成绩：<strong>3/188</strong></li>
+        <li>专业分流后第一学期：<strong>1/68</strong></li>
+      </ul>
 
 <hr>
 
