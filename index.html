@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
       --text: #1f2937;
       --muted: #6b7280;
       --line: #e5e7eb;
-      --bg: #f6f8fb;
+      --bg: #f5f7fb;
       --card: #ffffff;
       --accent: #2563eb;
     }
@@ -24,28 +25,29 @@
       font-family: "Microsoft YaHei", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     .container {
       max-width: 980px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 20px auto;
+      padding: 0 16px;
     }
 
-    /* 顶部信息卡片 */
+    /* 顶部信息 */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 32px;
+      gap: 24px;
 
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
+      border-radius: 22px;
 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 24px 28px;
+
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
     .hero-left {
@@ -54,16 +56,16 @@
     }
 
     .hero h1 {
-      margin: 0 0 16px;
-      font-size: 2.5rem;
+      margin: 0 0 12px;
+      font-size: 2.3rem;
       line-height: 1.2;
       color: #111827;
     }
 
     .subtitle {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
 
     .meta {
@@ -71,42 +73,48 @@
       padding-left: 22px;
     }
 
+    .meta li {
+      margin: 4px 0;
+    }
+
+    /* 证件照 */
     .photo {
       flex-shrink: 0;
     }
 
     .photo img {
-      width: 180px;
-      height: 240px;
+      width: 170px;
+      height: 225px;
+
       object-fit: cover;
       object-position: center top;
 
-      border-radius: 18px;
+      border-radius: 16px;
       border: 1px solid var(--line);
 
       background: white;
 
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
 
-    /* section */
+    /* 模块 */
     section {
-      margin-top: 28px;
+      margin-top: 16px;
 
       background: var(--card);
       border: 1px solid var(--line);
 
-      border-radius: 24px;
-      padding: 30px 34px;
+      border-radius: 22px;
 
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      padding: 22px 28px;
+
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     }
 
     h2 {
-      margin-top: 0;
-      margin-bottom: 22px;
+      margin: 0 0 16px;
 
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       color: #111827;
 
       border-left: 5px solid var(--accent);
@@ -114,39 +122,43 @@
     }
 
     h3 {
-      margin-top: 26px;
-      margin-bottom: 10px;
+      margin-top: 18px;
+      margin-bottom: 8px;
 
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       color: #111827;
     }
 
     h4 {
-      margin-top: 28px;
-      margin-bottom: 10px;
+      margin-top: 18px;
+      margin-bottom: 8px;
 
       font-size: 1rem;
       color: #374151;
     }
 
-    p, li {
-      font-size: 1rem;
+    p {
+      margin: 0 0 8px;
     }
 
     ul {
+      margin: 0;
       padding-left: 24px;
+    }
+
+    li {
+      margin: 4px 0;
     }
 
     hr {
       border: none;
       border-top: 1px solid var(--line);
-      margin: 30px 0;
+      margin: 18px 0;
     }
 
-    /* 图片统一展示框 */
+    /* 图片展示区域 */
     .work-frame {
-      width: min(100%, 760px);
-      aspect-ratio: 16 / 9;
+      width: 100%;
 
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -154,14 +166,14 @@
       overflow: hidden;
       background: #ffffff;
 
-      margin: 12px 0 24px 0;
+      margin: 10px 0 18px;
 
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     }
 
     .work-img {
       width: 100%;
-      height: 100%;
+      max-height: 640px;
 
       object-fit: contain;
       object-position: center;
@@ -169,21 +181,21 @@
       display: block;
     }
 
-    /* 手机端适配 */
+    /* 手机适配 */
     @media (max-width: 768px) {
 
       .container {
-        margin: 20px auto;
+        margin: 12px auto;
       }
 
       .hero {
         flex-direction: column-reverse;
         align-items: flex-start;
-        padding: 24px;
+        padding: 20px;
       }
 
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
 
       .photo {
@@ -193,16 +205,16 @@
       }
 
       .photo img {
-        width: 140px;
-        height: 190px;
+        width: 135px;
+        height: 180px;
       }
 
       section {
-        padding: 24px;
+        padding: 20px;
       }
 
-      .work-frame {
-        aspect-ratio: 4 / 3;
+      .work-img {
+        max-height: 420px;
       }
     }
   </style>
@@ -216,6 +228,7 @@
     <header class="hero">
 
       <div class="hero-left">
+
         <h1>方哲宇 | 化学（理论计算 / 电催化方向）</h1>
 
         <p class="subtitle">
@@ -226,6 +239,7 @@
           <li>邮箱：Zyfongchem@henu.edu.cn</li>
           <li>广东汕头人 · 现居河南开封</li>
         </ul>
+
       </div>
 
       <div class="photo">
@@ -278,8 +292,10 @@
         </li>
 
         <li>
-          计算 / 建模：了解 PyTorch 框架，能使用 Gurobi 高效解决规划问题；
-          学习新工具速度快；理论计算软件如 VASP、Materials Studio、
+          计算 / 建模：了解 PyTorch 框架，
+          能使用 Gurobi 高效解决规划问题；
+          学习新工具速度快；
+          理论计算软件如 VASP、Materials Studio、
           VESTA 和 OVITO 等
         </li>
       </ul>
@@ -395,4 +411,5 @@
   </div>
 
 </body>
+
 </html>
