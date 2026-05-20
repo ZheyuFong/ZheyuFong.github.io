@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>方哲宇 | 化学（理论计算/电催化方向）</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方哲宇 | 化学（理论计算 / 电催化方向）</title>
+
   <style>
-    :root{
-      --text:#1f2937;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --accent:#2563eb;
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --accent: #2563eb;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Microsoft YaHei", Arial, sans-serif;
-      color: var(--text);
       background: var(--bg);
-      line-height: 1.7;
+      color: var(--text);
+      line-height: 1.8;
     }
 
     .container {
       max-width: 980px;
-      margin: 0 auto;
-      padding: 24px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
+    /* 顶部信息卡片 */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 24px;
+      gap: 32px;
+
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      border-radius: 24px;
+      padding: 32px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .hero-left {
@@ -48,203 +54,345 @@
     }
 
     .hero h1 {
-      margin: 0 0 10px 0;
-      font-size: 2rem;
+      margin: 0 0 16px;
+      font-size: 2.5rem;
       line-height: 1.2;
       color: #111827;
     }
 
     .subtitle {
-      margin: 0 0 10px 0;
-      font-size: 1.05rem;
+      margin: 0 0 18px;
       color: var(--muted);
+      font-size: 1.1rem;
     }
 
     .meta {
       margin: 0;
-      padding-left: 18px;
-      color: var(--text);
+      padding-left: 22px;
     }
 
     .photo {
-      flex: 0 0 170px;
-      display: flex;
-      justify-content: flex-end;
+      flex-shrink: 0;
     }
 
     .photo img {
-      width: 160px;
-      height: 210px;
+      width: 180px;
+      height: 240px;
       object-fit: cover;
       object-position: center top;
-      border-radius: 16px;
+
+      border-radius: 18px;
       border: 1px solid var(--line);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
-      background: #fff;
+
+      background: white;
+
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
     }
 
+    /* section */
     section {
-      margin-top: 22px;
+      margin-top: 28px;
+
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 24px 28px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+      border-radius: 24px;
+      padding: 30px 34px;
+
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
 
     h2 {
-      margin: 0 0 14px 0;
-      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 22px;
+
+      font-size: 1.5rem;
       color: #111827;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
+
+      border-left: 5px solid var(--accent);
+      padding-left: 14px;
     }
 
     h3 {
-      margin: 18px 0 8px 0;
-      font-size: 1.05rem;
+      margin-top: 26px;
+      margin-bottom: 10px;
+
+      font-size: 1.15rem;
       color: #111827;
+    }
+
+    h4 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+
+      font-size: 1rem;
+      color: #374151;
     }
 
     p, li {
       font-size: 1rem;
-      color: var(--text);
     }
 
     ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    img.work-img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 12px 0 18px 0;
-      border-radius: 14px;
-      border: 1px solid var(--line);
+      padding-left: 24px;
     }
 
     hr {
       border: none;
       border-top: 1px solid var(--line);
-      margin: 18px 0;
+      margin: 30px 0;
     }
 
-    @media (max-width: 720px) {
+    /* 图片统一展示框 */
+    .work-frame {
+      width: min(100%, 760px);
+      aspect-ratio: 16 / 9;
+
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      overflow: hidden;
+      background: #ffffff;
+
+      margin: 12px 0 24px 0;
+
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .work-img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      object-position: center;
+
+      display: block;
+    }
+
+    /* 手机端适配 */
+    @media (max-width: 768px) {
+
+      .container {
+        margin: 20px auto;
+      }
+
       .hero {
         flex-direction: column-reverse;
         align-items: flex-start;
+        padding: 24px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
       }
 
       .photo {
         width: 100%;
+        display: flex;
         justify-content: flex-end;
       }
 
       .photo img {
-        width: 130px;
-        height: 172px;
+        width: 140px;
+        height: 190px;
       }
 
-      .container {
-        padding: 14px;
+      section {
+        padding: 24px;
       }
 
-      section, .hero {
-        padding: 18px;
-        border-radius: 16px;
-      }
-
-      .hero h1 {
-        font-size: 1.6rem;
+      .work-frame {
+        aspect-ratio: 4 / 3;
       }
     }
   </style>
 </head>
+
 <body>
+
   <div class="container">
+
+    <!-- 顶部 -->
     <header class="hero">
+
       <div class="hero-left">
         <h1>方哲宇 | 化学（理论计算 / 电催化方向）</h1>
-        <p class="subtitle"><strong>河南大学 · 化学本科 | 2024.09-至今</strong></p>
+
+        <p class="subtitle">
+          <strong>河南大学 · 化学本科 | 2024.09 - 至今</strong>
+        </p>
+
         <ul class="meta">
           <li>邮箱：Zyfongchem@henu.edu.cn</li>
-          <li>广东汕头人，现居河南开封</li>
+          <li>广东汕头人 · 现居河南开封</li>
         </ul>
       </div>
 
       <div class="photo">
-        <img src="https://free.picui.cn/free/2026/05/20/6a0dccbd4d913.png" alt="方哲宇证件照">
+        <img
+          src="https://free.picui.cn/free/2026/05/20/6a0dccbd4d913.png"
+          alt="方哲宇证件照">
       </div>
+
     </header>
 
+    <!-- 教育背景 -->
     <section>
+
       <h2>一、教育背景</h2>
+
       <h3>主修课程</h3>
-      <p>无机化学、有机化学、物理化学、分析化学、仪器分析及配套实验</p>
+      <p>
+        无机化学、有机化学、物理化学、分析化学、仪器分析及配套实验
+      </p>
 
       <h3>旁听课程</h3>
-      <p>统计力学、微分几何、生物化学、非线性物理学、数学模型</p>
+      <p>
+        统计力学、微分几何、生物化学、非线性物理学、数学模型
+      </p>
 
       <h3>自修课程</h3>
-      <p>数学分析、高等代数、常微分方程、机器学习、生物物理学、生物信息学</p>
+      <p>
+        数学分析、高等代数、常微分方程、机器学习、生物物理学、生物信息学
+      </p>
 
       <h3>学业排名</h3>
+
       <ul>
-        <li>第一学年综合成绩：<strong>3/188</strong></li>
-        <li>专业分流后第一学期：<strong>1/68</strong></li>
+        <li>第一学年综合成绩：<strong>3 / 188</strong></li>
+        <li>专业分流后第一学期：<strong>1 / 68</strong></li>
       </ul>
 
-<hr>
+    </section>
 
-<h2>二、专业技能</h2>
+    <!-- 专业技能 -->
+    <section>
 
-<h3>1. 编程与工具</h3>
-<ul>
-  <li>语言：Python、基础Linux命令、LaTeX</li>
-  <li>计算/建模：了解PyTorch框架，能使用Gurobi高效解决规划问题，学习新工具速度快；理论计算软件如VASP、Materials Studio、VESTA 和 OVITO等</li>
-</ul>
+      <h2>二、专业技能</h2>
 
-<h3>2. 部分代码展示</h3>
+      <h3>1. 编程与工具</h3>
 
-<h4>参与教育部化学大模型项目——化学MCP协作开发</h4>
-<img src="https://free.picui.cn/free/2026/05/19/6a0c05caa9cfd.png" alt="化学MCP协作开发">
+      <ul>
+        <li>
+          语言：Python、基础 Linux 命令、LaTeX
+        </li>
 
-<h4>主成分分析与K-means聚类</h4>
-<img src="https://free.picui.cn/free/2026/05/19/6a0c05ca8c496.png" alt="主成分分析与K-means聚类">
+        <li>
+          计算 / 建模：了解 PyTorch 框架，能使用 Gurobi 高效解决规划问题；
+          学习新工具速度快；理论计算软件如 VASP、Materials Studio、
+          VESTA 和 OVITO 等
+        </li>
+      </ul>
 
-<h4>复现一个简单Transformer例子，改成化学相关并做适应性调整</h4>
-<img src="https://free.picui.cn/free/2026/05/20/6a0da59626682.png" alt="Transformer例子">
+      <hr>
 
-<h4>规划问题</h4>
-<img src="https://free.picui.cn/free/2026/05/20/6a0da59faabee.png" alt="规划问题">
+      <h3>2. 部分代码展示</h3>
 
-<h3>3. 科研经历</h3>
-<ul>
-  <li>参与厦门大学汪骋教授课题组项目：教育部化学大模型项目——化学MCP开发，熟悉协作开发范式</li>
-  <li>主持计算化学开放性课题：掌握理论计算软件操作</li>
-  <li>参与电催化课题：熟悉材料制备、仪器表征原理、操作及解谱</li>
-  <li>在上述经历中，获得较好的文献检索与阅读能力和绘图能力</li>
-</ul>
+      <h4>参与教育部化学大模型项目——化学 MCP 协作开发</h4>
 
-<hr>
+      <div class="work-frame">
+        <img
+          class="work-img"
+          src="https://free.picui.cn/free/2026/05/19/6a0c05caa9cfd.png"
+          alt="化学MCP协作开发">
+      </div>
 
-<h2>三、学术荣誉</h2>
-<ul>
-  <li>全国大学生英语竞赛国家三等奖（2次）</li>
-  <li>“讲好河南故事”外语演讲比赛全省第二名</li>
-  <li>河南大学“三好学生”、“优秀学生干部”</li>
-  <li>河南大学奖学金、社会实践“先进个人”</li>
-  <li>......</li>
-</ul>
+      <h4>主成分分析与 K-means 聚类</h4>
 
-<hr>
+      <div class="work-frame">
+        <img
+          class="work-img"
+          src="https://free.picui.cn/free/2026/05/19/6a0c05ca8c496.png"
+          alt="PCA与K-means聚类">
+      </div>
 
-<h2>四、补充信息</h2>
-<p>跨学科学习能力强，责任心强；<br>
-身体条件出色，2025年河南田径大奖赛总决赛男子U20百米、二百米双料第五，适配高强度科研工作；<br>
-具备协作、支教经历，沟通能力良好。</p>
+      <h4>复现 Transformer 并进行化学适应性调整</h4>
+
+      <div class="work-frame">
+        <img
+          class="work-img"
+          src="https://free.picui.cn/free/2026/05/20/6a0da59626682.png"
+          alt="Transformer">
+      </div>
+
+      <h4>规划问题</h4>
+
+      <div class="work-frame">
+        <img
+          class="work-img"
+          src="https://free.picui.cn/free/2026/05/20/6a0da59faabee.png"
+          alt="规划问题">
+      </div>
+
+      <hr>
+
+      <h3>3. 科研经历</h3>
+
+      <ul>
+        <li>
+          参与厦门大学汪骋教授课题组项目：
+          教育部化学大模型项目——化学 MCP 开发，
+          熟悉协作开发范式
+        </li>
+
+        <li>
+          主持计算化学开放性课题：
+          掌握理论计算软件操作
+        </li>
+
+        <li>
+          参与电催化课题：
+          熟悉材料制备、仪器表征原理、操作及解谱
+        </li>
+
+        <li>
+          在上述经历中，
+          获得较好的文献检索与阅读能力和绘图能力
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- 荣誉 -->
+    <section>
+
+      <h2>三、学术荣誉</h2>
+
+      <ul>
+        <li>全国大学生英语竞赛国家三等奖（2次）</li>
+        <li>“讲好河南故事”外语演讲比赛全省第二名</li>
+        <li>河南大学“三好学生”、“优秀学生干部”</li>
+        <li>河南大学奖学金、社会实践“先进个人”</li>
+        <li>……</li>
+      </ul>
+
+    </section>
+
+    <!-- 补充 -->
+    <section>
+
+      <h2>四、补充信息</h2>
+
+      <p>
+        跨学科学习能力强，责任心强；
+        具备快速进入新领域并完成知识迁移的能力。
+      </p>
+
+      <p>
+        身体条件出色，
+        2025 年河南田径大奖赛总决赛男子 U20 百米、
+        二百米双料第五，
+        能适配高强度科研工作。
+      </p>
+
+      <p>
+        具备协作、支教经历，
+        沟通能力良好。
+      </p>
+
+    </section>
+
+  </div>
 
 </body>
 </html>
